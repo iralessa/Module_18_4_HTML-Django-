@@ -16,10 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.shortcuts import render
 from task2.views import func_view, ClassView
+from task3.views import index, shop, cart
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', func_view, name='func_template'),  # маршрут для функционального представления
-    path('class/', ClassView.as_view(), name='class_template'),  # маршрут для классового представления
+    path('', index, name='index'),  # Главная страница
+    path('page1/', shop, name='shop'),  # Магазин
+    path('page2/', cart, name='cart'),  # Корзина
 ]
+
+
+# Представление для страницы Магазина
+# def shop(request):
+#     # Словарь с пунктами списка
+#     item1 = 'Игровая консоль'
+#     item2 = 'гровой контроллер'
+#     item3 = 'Игровая гарнитура'
+#
+#     # Передаём словарь в шаблон через параметр context
+#     context = {
+#         'item1': item1,
+#         'item2': item2,
+#         'item3': item3
+#     }
+#     return render(request, 'third_task/page1.html', context)
