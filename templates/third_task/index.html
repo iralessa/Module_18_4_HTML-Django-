@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,19 @@
         h1, h2, h3 {
             color: #4B0082; /* Тёмно-фиолетовый цвет заголовков */
         }
+          {% extends 'fourth_task/menu.html' %}
+
+          {% block pagename %}
+          Главная страница
+          {% endblock %}
+
+          {% block content %}
+          <h1>Добро пожаловать на главную страницу</h1>
+          {% endblock %}
     </style>
+    <title>{% block title %} My Site {% endblock%} </title>
+    <link rel = 'stylesheet' type="text/css" href = '{% static "static.css" %}'>
+
 </head>
 <body>
     <b><h1>Главная страница</h1></b>

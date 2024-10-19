@@ -1,0 +1,18 @@
+# *.css files are supported by WebStorm
+body {
+    background-color: #FF5733; /* оранжевый фон */
+    color: #FFFFFF; /* Белый текст */
+}
+
+h1 {
+    color: #0000FF; /* Синий цвет для заголовков */
+    }
+
+li {
+    color: #0000FF; /* Синий цвет для заголовков */
+    font-size: 14px;
+    }
+p {
+    font-size: 18px;
+    color: grey;
+}

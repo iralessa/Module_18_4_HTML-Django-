@@ -1,0 +1,18 @@
+{% extends 'fourth_task/menu.html' %}
+{% block pagename %}Магазин{% endblock %}
+
+{% block content %}
+<style>
+    .game-list-item {
+        font-size: 24px; /* Увеличиваем размер текста игры */
+        padding: 10px;   /* Добавляем отступы */
+    }
+
+</style>
+
+<ul>
+    {% for game in games %}
+        <li class="game-list-item">{{ game }} <button class="buy-button">Купить</button></li>
+    {% endfor %}
+</ul>
+{% endblock %}

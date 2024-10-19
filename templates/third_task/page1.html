@@ -6,6 +6,30 @@
 <body>
     <h1>Магазин</h1>
 
+    {% extends 'fourth_task/menu.html' %}
+
+    {% block pagename %}
+    Магазин
+    {% endblock %}
+
+    {% block content %}
+    <h1>Это страница магазина</h1>
+    {% endblock %}
+
+    {% extends 'fourth_task/menu.html' %}
+
+    {% block pagename %}
+    Список игр
+    {% endblock %}
+
+    {% block content %}
+    <ul>
+        {% for game in games %}
+            <li>{{ game }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
     <ul>
         <li>{{ items.item1 }} <button>Купить</button></li>
         <li>{{ items.item2 }} <button>Купить</button></li>
