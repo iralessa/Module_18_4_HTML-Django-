@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+<body>
+    <h1>Регистрация</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if form %}
+        <!-- Форма для sign_up_by_django -->
+        <form method="POST" action="">
+            <h2>Регистрация через django </h2>
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    {% else %}
+        <!-- Форма для sign_up_by_html -->
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h2>Регистрация через html </h2>
+            <label for="username">Логин:</label>
+            <input type="text" name="username" id="username" required><br><br>
+
+            <label for="password">Пароль:</label>
+            <input type="password" name="password" id="password" required><br><br>
+
+            <label for="confirm_password">Повторите пароль:</label>
+            <input type="password" name="confirm_password" id="confirm_password" required><br><br>
+
+            <label for="age">Возраст:</label>
+            <input type="number" name="age" id="age" required><br><br>
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    {% endif %}
+</body>
